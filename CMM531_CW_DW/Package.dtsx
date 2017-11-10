@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{58929827-71E2-4C2A-9E56-66BAF64666CC}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{3EA749BC-35A6-4D48-BC1B-59AD8468ECC7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7176,39 +7176,39 @@ where [refTable].[category_id] = ?</property>
           <paths>
             <path
               refId="Package\Product Class ETL.Paths[Lookup Match Output]"
-              endId="Package\Product Class ETL\Lookup CategoryID with CategoryDepartment.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Product Class ETL\Lookup SubCategoryID with Category ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Product Class ETL.Paths[Lookup Match Output1]"
               endId="Package\Product Class ETL\Lookup Get SubCategoryName.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Product Class ETL\Lookup ProductSubCategory ID with SubCategoryID.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Product Class ETL.Paths[Lookup Match Output2]"
+              refId="Package\Product Class ETL.Paths[Lookup Match Output1]"
               endId="Package\Product Class ETL\Lookup Family Name.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Product Class ETL\Lookup CategoryDepartment_DepartmentID with Department_ID.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Product Class ETL.Paths[Lookup Match Output3]"
+              refId="Package\Product Class ETL.Paths[Lookup Match Output2]"
               endId="Package\Product Class ETL\Lookup DepartmentID with Department Name.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Product Class ETL\Lookup CategoryID with CategoryDepartment.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Product Class ETL.Paths[Lookup Match Output4]"
+              refId="Package\Product Class ETL.Paths[Lookup Match Output3]"
               endId="Package\Product Class ETL\Lookup CategoryDepartment_DepartmentID with Department_ID.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Product Class ETL\Lookup DepartmentID with Department Name.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Product Class ETL.Paths[Lookup Match Output5]"
+              refId="Package\Product Class ETL.Paths[Lookup Match Output4]"
               endId="Package\Product Class ETL\Lookup SubCategoryID with Category ID.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Product Class ETL\Lookup Get SubCategoryName.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Product Class ETL.Paths[Lookup Match Output6]"
+              refId="Package\Product Class ETL.Paths[Lookup Match Output5]"
               endId="Package\Product Class ETL\Sort.Inputs[Sort Input]"
               name="Lookup Match Output"
               startId="Package\Product Class ETL\Lookup Family Name.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Product Class ETL.Paths[Lookup Match Output6]"
+              endId="Package\Product Class ETL\Lookup CategoryID with CategoryDepartment.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Product Class ETL\Lookup SubCategoryID with Category ID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Product Class ETL.Paths[OLE DB Source Output]"
               endId="Package\Product Class ETL\Lookup ProductSubCategory ID with SubCategoryID.Inputs[Lookup Input]"
@@ -11493,136 +11493,6 @@ where [refTable].[product_class_id] = ?</property>
           version="1">
           <components>
             <component
-              refId="Package\Sales Fact ETL\Bad Sales Data"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Flat File Destination"
-              localeId="2057"
-              name="Bad Sales Data">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Sales Fact ETL\Bad Sales Data.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[sales_id]"
-                      cachedDataType="i4"
-                      cachedName="sales_id"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[sales_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[sales_id]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[product_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[product_id]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[time_id]"
-                      cachedDataType="i4"
-                      cachedName="time_id"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[time_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[time_id]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[customer_id]"
-                      cachedDataType="i4"
-                      cachedName="customer_id"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[customer_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[customer_id]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[promotion_id]"
-                      cachedDataType="i4"
-                      cachedName="promotion_id"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[promotion_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[promotion_id]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[store_id]"
-                      cachedDataType="i4"
-                      cachedName="store_id"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[store_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[store_id]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[store_sales]"
-                      cachedDataType="cy"
-                      cachedName="store_sales"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[store_sales]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[store_sales]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[store_cost]"
-                      cachedDataType="cy"
-                      cachedName="store_cost"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[store_cost]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[store_cost]" />
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].Columns[unit_sales]"
-                      cachedDataType="r8"
-                      cachedName="unit_sales"
-                      externalMetadataColumnId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[unit_sales]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[unit_sales]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[sales_id]"
-                      dataType="i4"
-                      name="sales_id" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[product_id]"
-                      dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[time_id]"
-                      dataType="i4"
-                      name="time_id" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[customer_id]"
-                      dataType="i4"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[promotion_id]"
-                      dataType="i4"
-                      name="promotion_id" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[store_id]"
-                      dataType="i4"
-                      name="store_id" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[store_sales]"
-                      dataType="cy"
-                      name="store_sales" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[store_cost]"
-                      dataType="cy"
-                      name="store_cost" />
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input].ExternalColumns[unit_sales]"
-                      dataType="r8"
-                      name="unit_sales" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
               refId="Package\Sales Fact ETL\FoodmartCA Sales"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -11945,13 +11815,6 @@ where [refTable].[product_class_id] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].Columns[sales_id]"
-                      cachedDataType="i4"
-                      cachedName="sales_id"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].ExternalColumns[sales_id]"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[sales_id]" />
-                    <inputColumn
                       refId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].Columns[time_id]"
                       cachedDataType="i4"
                       cachedName="time_id"
@@ -11997,9 +11860,15 @@ where [refTable].[product_class_id] = ?</property>
                       refId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].Columns[product_id]"
                       cachedDataType="i4"
                       cachedName="product_id"
-                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
                       lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[product_id]" />
+                    <inputColumn
+                      refId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].Columns[sales_id]"
+                      cachedDataType="i4"
+                      cachedName="sales_id"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input].ExternalColumns[sales_id]"
+                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[sales_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12083,7 +11952,7 @@ where [refTable].[product_class_id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[sales]</property>
+                  name="OpenRowset">[dbo].[sales_1998]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -12118,8 +11987,8 @@ where [refTable].[product_class_id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Sales Fact ETL\FoodmartMX Sales.Connections[OleDbConnection]"
-                  connectionManagerID="{35D95C0F-E230-4D24-B5C3-1E29A1543C82}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartCA]"
+                  connectionManagerID="{51C352E2-434F-4A47-B9DE-BF7504238126}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartMX]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -12128,15 +11997,6 @@ where [refTable].[product_class_id] = ?</property>
                   refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[sales_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].ExternalColumns[sales_id]"
-                      lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[sales_id]"
-                      name="sales_id"
-                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[product_id]"
                       dataType="i4"
@@ -12209,13 +12069,18 @@ where [refTable].[product_class_id] = ?</property>
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[unit_sales]"
                       name="unit_sales"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[sales_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].ExternalColumns[sales_id]"
+                      lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[sales_id]"
+                      name="sales_id"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].ExternalColumns[sales_id]"
-                      dataType="i4"
-                      name="sales_id" />
                     <externalMetadataColumn
                       refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
                       dataType="i4"
@@ -12248,6 +12113,10 @@ where [refTable].[product_class_id] = ?</property>
                       refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].ExternalColumns[unit_sales]"
                       dataType="r8"
                       name="unit_sales" />
+                    <externalMetadataColumn
+                      refId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].ExternalColumns[sales_id]"
+                      dataType="i4"
+                      name="sales_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -12568,583 +12437,6 @@ where [refTable].[product_class_id] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Sales CustomerID with Customer ID"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[customer]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[customer]) [refTable]
-where [refTable].[customer_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="customer_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="account_num" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lname" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fname" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="mi" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="address1" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="address2" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="address3" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="address4" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="city" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state_province" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="postal_code" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="customer_region_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="phone1" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="phone2" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="birthdate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="marital_status" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="yearly_income" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="gender" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="total_children" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="num_children_at_home" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="education" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="date_accnt_opened" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="member_card" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="occupation" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="houseowner" dataType="DT_WSTR" length="1" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="num_cars_owned" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[customer_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Connections[OleDbConnection]"
-                  connectionManagerID="{D3504DE8-8153-4099-B483-E7D278A7FEDF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartDW]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Inputs[Lookup Input].Columns[customer_id]"
-                      cachedDataType="i4"
-                      cachedName="customer_id"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[customer_id]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">customer_id</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">customer_id</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Sales Product ID with ProductID"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[product]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[product]) [refTable]
-where [refTable].[product_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="product_class_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="brand_name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKU" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SRP" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="gross_weight" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="net_weight" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="recyclable_package" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="low_fat" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="units_per_case" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="cases_per_pallet" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="shelf_width" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="shelf_height" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="shelf_depth" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[product_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Connections[OleDbConnection]"
-                  connectionManagerID="{D3504DE8-8153-4099-B483-E7D278A7FEDF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartDW]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Inputs[Lookup Input].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      cachedSortKeyPosition="2"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[product_id]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">product_id</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">product_id</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Sales Store ID with StoreID"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[store]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[store]) [refTable]
-where [refTable].[store_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="store_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_type" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="region_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_number" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_street_address" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_city" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_state" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_postal_code" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_country" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_manager" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_phone" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_fax" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="first_opened_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="last_remodel_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lease_sqft" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_sqft" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="grocery_sqft" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="frozen_sqft" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="meat_sqft" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="coffee_bar" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="video_store" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="salad_bar" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="prepared_food" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="florist" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[store_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Connections[OleDbConnection]"
-                  connectionManagerID="{D3504DE8-8153-4099-B483-E7D278A7FEDF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartDW]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Inputs[Lookup Input].Columns[store_id]"
-                      cachedDataType="i4"
-                      cachedName="store_id"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[store_id]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">store_id</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">store_id</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Sales TimeID with TimeID"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[time_by_day]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[time_by_day]) [refTable]
-where [refTable].[time_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">1</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="time_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="the_date" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="the_day" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="the_month" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="the_year" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="day_of_month" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="week_of_year" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="month_of_year" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="quarter" dataType="DT_WSTR" length="2" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fiscal_period" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[time_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Connections[OleDbConnection]"
-                  connectionManagerID="{D3504DE8-8153-4099-B483-E7D278A7FEDF}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartDW]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Inputs[Lookup Input].Columns[time_id]"
-                      cachedDataType="i4"
-                      cachedName="time_id"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[time_id]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">time_id</property>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">time_id</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Sales Fact ETL\Sort"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -13196,7 +12488,7 @@ where [refTable].[time_id] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -13339,8 +12631,7 @@ where [refTable].[time_id] = ?</property>
                       refId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[product_id]"
                       dataType="i4"
                       lineageId="Package\Sales Fact ETL\Sort.Outputs[Sort Output].Columns[product_id]"
-                      name="product_id"
-                      sortKeyPosition="2">
+                      name="product_id">
                       <properties>
                         <property
                           containsID="true"
@@ -13458,19 +12749,6 @@ where [refTable].[time_id] = ?</property>
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 1].Columns[sales_id]"
-                      cachedDataType="i4"
-                      cachedName="sales_id"
-                      lineageId="Package\Sales Fact ETL\FoodmartUS Sales.Outputs[OLE DB Source Output].Columns[sales_id]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[sales_id]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 1].Columns[product_id]"
                       cachedDataType="i4"
                       cachedName="product_id"
@@ -13574,19 +12852,11 @@ where [refTable].[time_id] = ?</property>
                           name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[unit_sales]}</property>
                       </properties>
                     </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 2]"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <inputColumns>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 2].Columns[sales_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 1].Columns[sales_id]"
                       cachedDataType="i4"
                       cachedName="sales_id"
-                      lineageId="Package\Sales Fact ETL\FoodmartCA Sales.Outputs[OLE DB Source Output].Columns[sales_id]">
+                      lineageId="Package\Sales Fact ETL\FoodmartUS Sales.Outputs[OLE DB Source Output].Columns[sales_id]">
                       <properties>
                         <property
                           containsID="true"
@@ -13595,6 +12865,14 @@ where [refTable].[time_id] = ?</property>
                           name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[sales_id]}</property>
                       </properties>
                     </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
                     <inputColumn
                       refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 2].Columns[product_id]"
                       cachedDataType="i4"
@@ -13699,19 +12977,11 @@ where [refTable].[time_id] = ?</property>
                           name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[unit_sales]}</property>
                       </properties>
                     </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3]"
-                  hasSideEffects="true"
-                  name="Union All Input 3">
-                  <inputColumns>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[sales_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 2].Columns[sales_id]"
                       cachedDataType="i4"
                       cachedName="sales_id"
-                      lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[sales_id]">
+                      lineageId="Package\Sales Fact ETL\FoodmartCA Sales.Outputs[OLE DB Source Output].Columns[sales_id]">
                       <properties>
                         <property
                           containsID="true"
@@ -13720,8 +12990,16 @@ where [refTable].[time_id] = ?</property>
                           name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[sales_id]}</property>
                       </properties>
                     </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4]"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <inputColumns>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[product_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[product_id]"
                       cachedDataType="i4"
                       cachedName="product_id"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[product_id]">
@@ -13734,7 +13012,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[time_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[time_id]"
                       cachedDataType="i4"
                       cachedName="time_id"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[time_id]">
@@ -13747,7 +13025,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[customer_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[customer_id]"
                       cachedDataType="i4"
                       cachedName="customer_id"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[customer_id]">
@@ -13760,7 +13038,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[promotion_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[promotion_id]"
                       cachedDataType="i4"
                       cachedName="promotion_id"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[promotion_id]">
@@ -13773,7 +13051,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[store_id]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[store_id]"
                       cachedDataType="i4"
                       cachedName="store_id"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[store_id]">
@@ -13786,7 +13064,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[store_sales]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[store_sales]"
                       cachedDataType="cy"
                       cachedName="store_sales"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[store_sales]">
@@ -13799,7 +13077,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[store_cost]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[store_cost]"
                       cachedDataType="cy"
                       cachedName="store_cost"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[store_cost]">
@@ -13812,7 +13090,7 @@ where [refTable].[time_id] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3].Columns[unit_sales]"
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[unit_sales]"
                       cachedDataType="r8"
                       cachedName="unit_sales"
                       lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[unit_sales]">
@@ -13824,14 +13102,27 @@ where [refTable].[time_id] = ?</property>
                           name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[unit_sales]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4].Columns[sales_id]"
+                      cachedDataType="i4"
+                      cachedName="sales_id"
+                      lineageId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output].Columns[sales_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Sales Fact ETL\Union All.Outputs[Union All Output 1].Columns[sales_id]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4]"
+                  refId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3]"
                   dangling="true"
                   hasSideEffects="true"
-                  name="Union All Input 4">
+                  name="Union All Input 3">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -13893,31 +13184,6 @@ where [refTable].[time_id] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Sales Fact ETL.Paths[Lookup Match Output]"
-              endId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Sales Fact ETL.Paths[Lookup Match Output1]"
-              endId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Sales Fact ETL.Paths[Lookup Match Output2]"
-              endId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Sales Fact ETL.Paths[Lookup Match Output3]"
-              endId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input]"
-              name="Lookup Match Output"
-              startId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Sales Fact ETL.Paths[Lookup No Match Output]"
-              endId="Package\Sales Fact ETL\Bad Sales Data.Inputs[Flat File Destination Input]"
-              name="Lookup No Match Output"
-              startId="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID.Outputs[Lookup No Match Output]" />
-            <path
               refId="Package\Sales Fact ETL.Paths[OLE DB Source Output]"
               endId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 1]"
               name="OLE DB Source Output"
@@ -13929,12 +13195,12 @@ where [refTable].[time_id] = ?</property>
               startId="Package\Sales Fact ETL\FoodmartCA Sales.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Sales Fact ETL.Paths[OLE DB Source Output2]"
-              endId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 3]"
+              endId="Package\Sales Fact ETL\Union All.Inputs[Union All Input 4]"
               name="OLE DB Source Output"
               startId="Package\Sales Fact ETL\FoodmartMX Sales.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Sales Fact ETL.Paths[Sort Output]"
-              endId="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID.Inputs[Lookup Input]"
+              endId="Package\Sales Fact ETL\FoodMartDW Sales Fact Load.Inputs[OLE DB Destination Input]"
               name="Sort Output"
               startId="Package\Sales Fact ETL\Sort.Outputs[Sort Output]" />
             <path
@@ -20017,6 +19283,10 @@ where [refTable].[time_id] = ?</property>
           Id="Package\Region ETL"
           TopLeft="42,164" />
         <NodeLayout
+          Size="149,42"
+          Id="Package\Sales Fact ETL"
+          TopLeft="220.5,331.5" />
+        <NodeLayout
           Size="127,42"
           Id="Package\Store ETL"
           TopLeft="45,251" />
@@ -20024,10 +19294,6 @@ where [refTable].[time_id] = ?</property>
           Size="125,42"
           Id="Package\Time ETL"
           TopLeft="40,336" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Sales Fact ETL"
-          TopLeft="220.5,331.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -20035,7 +19301,7 @@ where [refTable].[time_id] = ?</property>
     design-time-name="Package\Customer ETL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="221,42"
           Id="Package\Customer ETL\FoodMartDW Customers Load"
@@ -20079,7 +19345,9 @@ where [refTable].[time_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20113,7 +19381,9 @@ where [refTable].[time_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20147,7 +19417,9 @@ where [refTable].[time_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20169,7 +19441,9 @@ where [refTable].[time_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20203,7 +19477,9 @@ where [refTable].[time_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -20285,7 +19561,7 @@ where [refTable].[time_id] = ?</property>
         <NodeLayout
           Size="273,42"
           Id="Package\Product Class ETL\Lookup SubCategoryID with Category ID"
-          TopLeft="559.75,68.25" />
+          TopLeft="560.75,67.25" />
         <NodeLayout
           Size="100,42"
           Id="Package\Product Class ETL\Sort"
@@ -20307,43 +19583,43 @@ where [refTable].[time_id] = ?</property>
           Id="Package\Product Class ETL\Lookup ProductSubCategory ID with SubCategoryID"
           TopLeft="72,69" />
         <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output5]"
+          Id="Package\Product Class ETL.Paths[Lookup Match Output4]"
           TopLeft="294,139.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="265.75,-50.0833333333333"
+              EndConnector="266.75,-51.0833333333333"
               Start="0,0"
-              End="258.25,-50.0833333333333">
+              End="259.25,-51.0833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="108.151376146789,0" />
+                    End="108.573394495413,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="108.151376146789,0"
-                    Point2="112.151376146789,0"
-                    Point3="112.151376146789,-4" />
+                    Point1="108.573394495413,0"
+                    Point2="112.573394495413,0"
+                    Point3="112.573394495413,-4" />
                   <mssgle:LineSegment
-                    End="112.151376146789,-46.0833333333333" />
+                    End="112.573394495413,-47.0833333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="112.151376146789,-46.0833333333333"
-                    Point2="112.151376146789,-50.0833333333333"
-                    Point3="116.151376146789,-50.0833333333333" />
+                    Point1="112.573394495413,-47.0833333333333"
+                    Point2="112.573394495413,-51.0833333333333"
+                    Point3="116.573394495413,-51.0833333333333" />
                   <mssgle:LineSegment
-                    End="258.25,-50.0833333333333" />
+                    End="259.25,-51.0833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="63.959989428039,1,96.3827734375,11.609375"
+              BoundingBox="64.3820077766629,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output4]"
+          Id="Package\Product Class ETL.Paths[Lookup Match Output3]"
           TopLeft="59.7500000000001,226.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20373,7 +19649,7 @@ where [refTable].[time_id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output3]"
+          Id="Package\Product Class ETL.Paths[Lookup Match Output2]"
           TopLeft="442.5,163.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20409,7 +19685,7 @@ where [refTable].[time_id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output2]"
+          Id="Package\Product Class ETL.Paths[Lookup Match Output1]"
           TopLeft="230.75,310.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20445,7 +19721,7 @@ where [refTable].[time_id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output1]"
+          Id="Package\Product Class ETL.Paths[Lookup Match Output]"
           TopLeft="235,111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20471,42 +19747,6 @@ where [refTable].[time_id] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-20.44138671875,44.6666666666667,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output]"
-          TopLeft="696.25,110.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-105.75,32.25"
-              Start="0,0"
-              End="-105.75,24.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.125"
-                    Point2="0,16.125"
-                    Point3="-4,16.125" />
-                  <mssgle:LineSegment
-                    End="-101.75,16.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-101.75,16.125"
-                    Point2="-105.75,16.125"
-                    Point3="-105.75,20.125" />
-                  <mssgle:LineSegment
-                    End="-105.75,24.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-101.06638671875,21.125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -20575,7 +19815,7 @@ where [refTable].[time_id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Product Class ETL.Paths[Lookup Match Output6]"
+          Id="Package\Product Class ETL.Paths[Lookup Match Output5]"
           TopLeft="565,344">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20607,6 +19847,42 @@ where [refTable].[time_id] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="82.9399609375,-9.9966777408638,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Class ETL.Paths[Lookup Match Output6]"
+          TopLeft="697.25,109.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.75,33.25"
+              Start="0,0"
+              End="-106.75,25.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.625"
+                    Point2="0,16.625"
+                    Point3="-4,16.625" />
+                  <mssgle:LineSegment
+                    End="-102.75,16.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.75,16.625"
+                    Point2="-106.75,16.625"
+                    Point3="-106.75,20.625" />
+                  <mssgle:LineSegment
+                    End="-106.75,25.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-101.56638671875,21.625,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -20701,7 +19977,7 @@ where [refTable].[time_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -20711,7 +19987,7 @@ where [refTable].[time_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20983,17 +20259,121 @@ where [refTable].[time_id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="123,42"
+          Id="Package\Promotion ETL\Union All"
+          TopLeft="404.5,159.5" />
+        <NodeLayout
           Size="100,42"
           Id="Package\Promotion ETL\Sort"
           TopLeft="589,158" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Promotion ETL\FoodMartDW Promotion Load"
+          TopLeft="774,150" />
         <NodeLayout
           Size="190,42"
           Id="Package\Promotion ETL\FoodMartUS Promotion"
           TopLeft="93,105" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\Promotion ETL\FoodMartDW Promotion Load"
-          TopLeft="774,150" />
+          Size="189,42"
+          Id="Package\Promotion ETL\FoodMartCA Promotion"
+          TopLeft="92,177" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Promotion ETL\FoodMartMX Promotion"
+          TopLeft="94,256" />
+        <EdgeLayout
+          Id="Package\Promotion ETL.Paths[OLE DB Source Output1]"
+          TopLeft="281,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.5,-11.8333333333333"
+              Start="0,0"
+              End="116,-11.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.3807339449541,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.3807339449541,0"
+                    Point2="71.3807339449541,0"
+                    Point3="71.3807339449541,-4" />
+                  <mssgle:LineSegment
+                    End="71.3807339449541,-7.83333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.3807339449541,-7.83333333333334"
+                    Point2="71.3807339449541,-11.8333333333333"
+                    Point3="75.3807339449541,-11.8333333333333" />
+                  <mssgle:LineSegment
+                    End="116,-11.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Promotion ETL.Paths[OLE DB Source Output]"
+          TopLeft="283,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.5,48.8333333333333"
+              Start="0,0"
+              End="114,48.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.2247706422018,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.2247706422018,0"
+                    Point2="70.2247706422018,0"
+                    Point3="70.2247706422018,4" />
+                  <mssgle:LineSegment
+                    End="70.2247706422018,44.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.2247706422018,44.8333333333333"
+                    Point2="70.2247706422018,48.8333333333333"
+                    Point3="74.2247706422018,48.8333333333333" />
+                  <mssgle:LineSegment
+                    End="114,48.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Promotion ETL.Paths[Union All Output 1]"
+          TopLeft="527.5,179.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.5,0"
+              Start="0,0"
+              End="54,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Promotion ETL.Paths[Sort Output]"
           TopLeft="689,179">
@@ -21030,86 +20410,6 @@ where [refTable].[time_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Promotion ETL\FoodMartCA Promotion"
-          TopLeft="92,177" />
-        <NodeLayout
-          Size="191,42"
-          Id="Package\Promotion ETL\FoodMartMX Promotion"
-          TopLeft="94,256" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Promotion ETL\Union All"
-          TopLeft="404.5,159.5" />
-        <EdgeLayout
-          Id="Package\Promotion ETL.Paths[OLE DB Source Output]"
-          TopLeft="283,126">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="121.5,48.8333333333333"
-              Start="0,0"
-              End="114,48.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.2247706422018,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.2247706422018,0"
-                    Point2="70.2247706422018,0"
-                    Point3="70.2247706422018,4" />
-                  <mssgle:LineSegment
-                    End="70.2247706422018,44.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70.2247706422018,44.8333333333333"
-                    Point2="70.2247706422018,48.8333333333333"
-                    Point3="74.2247706422018,48.8333333333333" />
-                  <mssgle:LineSegment
-                    End="114,48.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Promotion ETL.Paths[OLE DB Source Output1]"
-          TopLeft="281,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.5,-11.8333333333333"
-              Start="0,0"
-              End="116,-11.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="67.3807339449541,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="67.3807339449541,0"
-                    Point2="71.3807339449541,0"
-                    Point3="71.3807339449541,-4" />
-                  <mssgle:LineSegment
-                    End="71.3807339449541,-7.83333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.3807339449541,-7.83333333333334"
-                    Point2="71.3807339449541,-11.8333333333333"
-                    Point3="75.3807339449541,-11.8333333333333" />
-                  <mssgle:LineSegment
-                    End="116,-11.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Promotion ETL.Paths[OLE DB Source Output2]"
           TopLeft="189.5,256">
@@ -21144,33 +20444,22 @@ where [refTable].[time_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Promotion ETL.Paths[Union All Output 1]"
-          TopLeft="527.5,179.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.5,0"
-              Start="0,0"
-              End="54,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="19,5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Promotion ETL\FoodMartDW Promotion Load">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Promotion ETL\FoodMartUS Promotion">
     <Properties>
@@ -21185,7 +20474,20 @@ where [refTable].[time_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Promotion ETL\FoodMartDW Promotion Load">
+    design-time-name="Package\Promotion ETL\FoodMartCA Promotion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Promotion ETL\FoodMartMX Promotion">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -21203,13 +20505,21 @@ where [refTable].[time_id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174,42"
-          Id="Package\Region ETL\FoodMartUS Region"
-          TopLeft="86,46" />
+          Size="123,42"
+          Id="Package\Region ETL\Union All"
+          TopLeft="380,146" />
+        <NodeLayout
+          Size="100,42"
+          Id="Package\Region ETL\Sort"
+          TopLeft="564,147" />
         <NodeLayout
           Size="204,42"
           Id="Package\Region ETL\FoodMartDW Region Load"
           TopLeft="722,134" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Region ETL\FoodMartUS Region"
+          TopLeft="86,46" />
         <NodeLayout
           Size="174,42"
           Id="Package\Region ETL\FoodMartCA Region"
@@ -21218,70 +20528,6 @@ where [refTable].[time_id] = ?</property>
           Size="175,42"
           Id="Package\Region ETL\FoodMartMX Region"
           TopLeft="87,251" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Region ETL\Union All"
-          TopLeft="380,146" />
-        <EdgeLayout
-          Id="Package\Region ETL.Paths[OLE DB Source Output]"
-          TopLeft="173,88">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="268.5,58"
-              Start="0,0"
-              End="268.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="264.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="264.5,29"
-                    Point2="268.5,29"
-                    Point3="268.5,33" />
-                  <mssgle:LineSegment
-                    End="268.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Region ETL.Paths[OLE DB Source Output1]"
-          TopLeft="260,168.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120,0"
-              Start="0,0"
-              End="112.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="112.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="100,42"
-          Id="Package\Region ETL\Sort"
-          TopLeft="564,147" />
         <EdgeLayout
           Id="Package\Region ETL.Paths[Union All Output 1]"
           TopLeft="503,167.5">
@@ -21376,9 +20622,78 @@ where [refTable].[time_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region ETL.Paths[OLE DB Source Output1]"
+          TopLeft="260,168.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,0"
+              Start="0,0"
+              End="112.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region ETL.Paths[OLE DB Source Output]"
+          TopLeft="173,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="268.5,58"
+              Start="0,0"
+              End="268.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="264.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="264.5,29"
+                    Point2="268.5,29"
+                    Point3="268.5,33" />
+                  <mssgle:LineSegment
+                    End="268.5,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Region ETL\FoodMartDW Region Load">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Region ETL\FoodMartUS Region">
     <Properties>
@@ -21393,7 +20708,236 @@ where [refTable].[time_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Region ETL\FoodMartDW Region Load">
+    design-time-name="Package\Region ETL\FoodMartMX Region">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sales Fact ETL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Sales Fact ETL\FoodMartDW Sales Fact Load"
+          TopLeft="753,172" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Sales Fact ETL\Union All"
+          TopLeft="281,156" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Sales Fact ETL\FoodmartUS Sales"
+          TopLeft="73,67" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Sales Fact ETL\FoodmartCA Sales"
+          TopLeft="73,156" />
+        <NodeLayout
+          Size="100,42"
+          Id="Package\Sales Fact ETL\Sort"
+          TopLeft="412,143" />
+        <EdgeLayout
+          Id="Package\Sales Fact ETL.Paths[Union All Output 1]"
+          TopLeft="361.666666666667,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.333333333333,-13"
+              Start="0,0"
+              End="100.333333333333,-5.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="96.3333333333334,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.3333333333334,22.5"
+                    Point2="100.333333333333,22.5"
+                    Point3="100.333333333333,18.5" />
+                  <mssgle:LineSegment
+                    End="100.333333333333,-5.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sales Fact ETL.Paths[OLE DB Source Output1]"
+          TopLeft="240,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41,0"
+              Start="0,0"
+              End="33.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sales Fact ETL.Paths[OLE DB Source Output]"
+          TopLeft="156.5,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="186,47"
+              Start="0,0"
+              End="186,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="182,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="182,23.5"
+                    Point2="186,23.5"
+                    Point3="186,27.5" />
+                  <mssgle:LineSegment
+                    End="186,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Sales Fact ETL\FoodmartMX Sales"
+          TopLeft="74,238" />
+        <EdgeLayout
+          Id="Package\Sales Fact ETL.Paths[OLE DB Source Output2]"
+          TopLeft="158,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165.333333333333,-40"
+              Start="0,0"
+              End="165.333333333333,-32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.6918138041734" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.6918138041734"
+                    Point2="0,-23.6918138041734"
+                    Point3="4,-23.6918138041734" />
+                  <mssgle:LineSegment
+                    End="161.333333333333,-23.6918138041734" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.333333333333,-23.6918138041734"
+                    Point2="165.333333333333,-23.6918138041734"
+                    Point3="165.333333333333,-27.6918138041734" />
+                  <mssgle:LineSegment
+                    End="165.333333333333,-32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sales Fact ETL.Paths[Sort Output]"
+          TopLeft="512,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241,29"
+              Start="0,0"
+              End="233.5,29">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="116.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.5,0"
+                    Point2="120.5,0"
+                    Point3="120.5,4" />
+                  <mssgle:LineSegment
+                    End="120.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.5,25"
+                    Point2="120.5,29"
+                    Point3="124.5,29" />
+                  <mssgle:LineSegment
+                    End="233.5,29" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Fact ETL\FoodMartDW Sales Fact Load">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Fact ETL\FoodmartUS Sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sales Fact ETL\FoodmartCA Sales">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -21411,131 +20955,29 @@ where [refTable].[time_id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="100,42"
+          Id="Package\Store ETL\Sort"
+          TopLeft="471,126" />
+        <NodeLayout
           Size="166,42"
           Id="Package\Store ETL\FoodMartUS Store"
           TopLeft="4,37" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Store ETL\Union All"
+          TopLeft="273,124" />
         <NodeLayout
           Size="196,42"
           Id="Package\Store ETL\FoodMartDW Store Load"
           TopLeft="653,129" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Store ETL\FoodMartCA Store"
-          TopLeft="3,132" />
-        <NodeLayout
           Size="168,42"
           Id="Package\Store ETL\FoodMartMX Store"
           TopLeft="2,219" />
         <NodeLayout
-          Size="123,42"
-          Id="Package\Store ETL\Union All"
-          TopLeft="273,124" />
-        <EdgeLayout
-          Id="Package\Store ETL.Paths[OLE DB Source Output]"
-          TopLeft="87,79">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="247.5,45"
-              Start="0,0"
-              End="247.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="243.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="243.5,22.5"
-                    Point2="247.5,22.5"
-                    Point3="247.5,26.5" />
-                  <mssgle:LineSegment
-                    End="247.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Store ETL.Paths[OLE DB Source Output1]"
-          TopLeft="169,153">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="104,-8"
-              Start="0,0"
-              End="96.5,-8">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="48,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="48,0"
-                    Point2="52,0"
-                    Point3="52,-4" />
-                  <mssgle:LineSegment
-                    End="52,-4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="52,-4"
-                    Point2="52,-8"
-                    Point3="56,-8" />
-                  <mssgle:LineSegment
-                    End="96.5,-8" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Store ETL.Paths[OLE DB Source Output2]"
-          TopLeft="86,219">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="248.5,-53"
-              Start="0,0"
-              End="248.5,-45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-22.5"
-                    Point2="0,-26.5"
-                    Point3="4,-26.5" />
-                  <mssgle:LineSegment
-                    End="244.5,-26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="244.5,-26.5"
-                    Point2="248.5,-26.5"
-                    Point3="248.5,-30.5" />
-                  <mssgle:LineSegment
-                    End="248.5,-45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="100,42"
-          Id="Package\Store ETL\Sort"
-          TopLeft="471,126" />
+          Size="166,42"
+          Id="Package\Store ETL\FoodMartCA Store"
+          TopLeft="3,132" />
         <EdgeLayout
           Id="Package\Store ETL.Paths[Union All Output 1]"
           TopLeft="396,146">
@@ -21584,6 +21026,108 @@ where [refTable].[time_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Store ETL.Paths[OLE DB Source Output2]"
+          TopLeft="86,219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="248.5,-53"
+              Start="0,0"
+              End="248.5,-45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-22.5"
+                    Point2="0,-26.5"
+                    Point3="4,-26.5" />
+                  <mssgle:LineSegment
+                    End="244.5,-26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="244.5,-26.5"
+                    Point2="248.5,-26.5"
+                    Point3="248.5,-30.5" />
+                  <mssgle:LineSegment
+                    End="248.5,-45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Store ETL.Paths[OLE DB Source Output1]"
+          TopLeft="169,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,-8"
+              Start="0,0"
+              End="96.5,-8">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48,0"
+                    Point2="52,0"
+                    Point3="52,-4" />
+                  <mssgle:LineSegment
+                    End="52,-4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52,-4"
+                    Point2="52,-8"
+                    Point3="56,-8" />
+                  <mssgle:LineSegment
+                    End="96.5,-8" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Store ETL.Paths[OLE DB Source Output]"
+          TopLeft="87,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="247.5,45"
+              Start="0,0"
+              End="247.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="243.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="243.5,22.5"
+                    Point2="247.5,22.5"
+                    Point3="247.5,26.5" />
+                  <mssgle:LineSegment
+                    End="247.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -21602,6 +21146,19 @@ where [refTable].[time_id] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Store ETL\FoodMartDW Store Load">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Store ETL\FoodMartMX Store">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -21860,452 +21417,6 @@ where [refTable].[time_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Region ETL\FoodMartMX Region">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Promotion ETL\FoodMartCA Promotion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Promotion ETL\FoodMartMX Promotion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Store ETL\FoodMartMX Store">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sales Fact ETL">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Sales Fact ETL\FoodmartUS Sales"
-          TopLeft="73,67" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Sales Fact ETL\FoodmartCA Sales"
-          TopLeft="73,156" />
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Sales Fact ETL\FoodmartMX Sales"
-          TopLeft="74,238" />
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Sales Fact ETL\Union All"
-          TopLeft="281,156" />
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[OLE DB Source Output]"
-          TopLeft="156.5,109">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="186,47"
-              Start="0,0"
-              End="186,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="4,23.5" />
-                  <mssgle:LineSegment
-                    End="182,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="182,23.5"
-                    Point2="186,23.5"
-                    Point3="186,27.5" />
-                  <mssgle:LineSegment
-                    End="186,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[OLE DB Source Output1]"
-          TopLeft="240,177">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41,0"
-              Start="0,0"
-              End="33.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="33.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[OLE DB Source Output2]"
-          TopLeft="158,238">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="184.5,-40"
-              Start="0,0"
-              End="184.5,-32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-16"
-                    Point2="0,-20"
-                    Point3="4,-20" />
-                  <mssgle:LineSegment
-                    End="180.5,-20" />
-                  <mssgle:CubicBezierSegment
-                    Point1="180.5,-20"
-                    Point2="184.5,-20"
-                    Point3="184.5,-24" />
-                  <mssgle:LineSegment
-                    End="184.5,-32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="100,42"
-          Id="Package\Sales Fact ETL\Sort"
-          TopLeft="412,143" />
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Union All Output 1]"
-          TopLeft="361.666666666667,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.333333333333,-13"
-              Start="0,0"
-              End="100.333333333333,-5.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="96.3333333333334,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.3333333333334,22.5"
-                    Point2="100.333333333333,22.5"
-                    Point3="100.333333333333,18.5" />
-                  <mssgle:LineSegment
-                    End="100.333333333333,-5.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="219,42"
-          Id="Package\Sales Fact ETL\FoodMartDW Sales Fact Load"
-          TopLeft="873,355" />
-        <NodeLayout
-          Size="270,42"
-          Id="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID"
-          TopLeft="522,153" />
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Sort Output]"
-          TopLeft="462,143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="195,10"
-              Start="0,0"
-              End="195,2.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-18.5"
-                    Point2="0,-22.5"
-                    Point3="4,-22.5" />
-                  <mssgle:LineSegment
-                    End="191,-22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="191,-22.5"
-                    Point2="195,-22.5"
-                    Point3="195,-18.5" />
-                  <mssgle:LineSegment
-                    End="195,2.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="89.5,-17.5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Sales Fact ETL\Bad Sales Data"
-          TopLeft="556,431" />
-        <NodeLayout
-          Size="288,42"
-          Id="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID"
-          TopLeft="503,224" />
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Lookup Match Output]"
-          TopLeft="657,195">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10,29"
-              Start="0,0"
-              End="-10,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5"
-                    Point2="0,14.5"
-                    Point3="-4,14.5" />
-                  <mssgle:LineSegment
-                    End="-6,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6,14.5"
-                    Point2="-10,14.5"
-                    Point3="-10,18.5" />
-                  <mssgle:LineSegment
-                    End="-10,21.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-53.19138671875,19.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="242,42"
-          Id="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID"
-          TopLeft="522,294" />
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Lookup Match Output1]"
-          TopLeft="645,266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="248,42"
-          Id="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID"
-          TopLeft="531,362" />
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Lookup Match Output2]"
-          TopLeft="643,336">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12,26"
-              Start="0,0"
-              End="12,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="4,13" />
-                  <mssgle:LineSegment
-                    End="8,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8,13"
-                    Point2="12,13"
-                    Point3="12,17" />
-                  <mssgle:LineSegment
-                    End="12,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-42.19138671875,18,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Lookup Match Output3]"
-          TopLeft="779,379.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94,0"
-              Start="0,0"
-              End="86.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="86.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-4.94138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sales Fact ETL.Paths[Lookup No Match Output]"
-          TopLeft="655,404">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-23,27"
-              Start="0,0"
-              End="-23,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="-4,13.5" />
-                  <mssgle:LineSegment
-                    End="-19,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-19,13.5"
-                    Point2="-23,13.5"
-                    Point3="-23,17.5" />
-                  <mssgle:LineSegment
-                    End="-23,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-67.30638671875,18.5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\FoodmartUS Sales">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\FoodmartCA Sales">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sales Fact ETL\FoodmartMX Sales">
     <Properties>
       <Property>
@@ -22315,111 +21426,6 @@ where [refTable].[time_id] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\FoodMartDW Sales Fact Load">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\Lookup Sales Product ID with ProductID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\Lookup Sales CustomerID with Customer ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[customer]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\Lookup Sales TimeID with TimeID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[time_by_day]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sales Fact ETL\Lookup Sales Store ID with StoreID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[store]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
