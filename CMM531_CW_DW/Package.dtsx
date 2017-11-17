@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{0BF5D34B-30F6-4DA8-A19C-AD47624C5E56}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{02ED6BD3-6367-4641-9960-2B51183FB3AA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -866,7 +866,6 @@
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="lname"
-                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Customer ETL\FoodMartDW Customers Load.Inputs[OLE DB Destination Input].ExternalColumns[lname]"
                       lineageId="Package\Customer ETL\Sort.Outputs[Sort Output].Columns[lname]" />
                     <inputColumn
@@ -874,7 +873,6 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="fname"
-                      cachedSortKeyPosition="3"
                       externalMetadataColumnId="Package\Customer ETL\FoodMartDW Customers Load.Inputs[OLE DB Destination Input].ExternalColumns[fname]"
                       lineageId="Package\Customer ETL\Sort.Outputs[Sort Output].Columns[fname]" />
                     <inputColumn
@@ -2575,7 +2573,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2592,7 +2590,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">3</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3039,8 +3037,7 @@
                       dataType="wstr"
                       length="100"
                       lineageId="Package\Customer ETL\Sort.Outputs[Sort Output].Columns[lname]"
-                      name="lname"
-                      sortKeyPosition="2">
+                      name="lname">
                       <properties>
                         <property
                           containsID="true"
@@ -3054,8 +3051,7 @@
                       dataType="wstr"
                       length="50"
                       lineageId="Package\Customer ETL\Sort.Outputs[Sort Output].Columns[fname]"
-                      name="fname"
-                      sortKeyPosition="3">
+                      name="fname">
                       <properties>
                         <property
                           containsID="true"
@@ -10905,7 +10901,7 @@ where [refTable].[product_class_id] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
+                  name="EliminateDuplicates">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the maximum number of threads to use for sorting."
@@ -11378,6 +11374,89 @@ where [refTable].[product_class_id] = ?</property>
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[region_id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region ETL\Union All.Inputs[Union All Input 4].Columns[city]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="city"
+                      lineageId="Package\Region ETL\FoodMartMX Region.Outputs[OLE DB Source Output].Columns[city]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[sales_city]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region ETL\Union All.Inputs[Union All Input 4].Columns[state_province]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="state_province"
+                      lineageId="Package\Region ETL\FoodMartMX Region.Outputs[OLE DB Source Output].Columns[state_province]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[sales_state_province]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region ETL\Union All.Inputs[Union All Input 4].Columns[district]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="district"
+                      lineageId="Package\Region ETL\FoodMartMX Region.Outputs[OLE DB Source Output].Columns[district]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[sales_district]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region ETL\Union All.Inputs[Union All Input 4].Columns[region]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="region"
+                      lineageId="Package\Region ETL\FoodMartMX Region.Outputs[OLE DB Source Output].Columns[region]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[sales_region]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region ETL\Union All.Inputs[Union All Input 4].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\Region ETL\FoodMartMX Region.Outputs[OLE DB Source Output].Columns[country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[sales_country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Region ETL\Union All.Inputs[Union All Input 4].Columns[district_id]"
+                      cachedDataType="i4"
+                      cachedName="district_id"
+                      lineageId="Package\Region ETL\FoodMartMX Region.Outputs[OLE DB Source Output].Columns[district_id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Region ETL\Union All.Outputs[Union All Output 1].Columns[sales_district_id]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -13847,8 +13926,8 @@ where [refTable].[product_class_id] = ?</property>
               <connections>
                 <connection
                   refId="Package\Store ETL\FoodMartDW Store Load.Connections[OleDbConnection]"
-                  connectionManagerID="{35D95C0F-E230-4D24-B5C3-1E29A1543C82}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartCA]"
+                  connectionManagerID="{D3504DE8-8153-4099-B483-E7D278A7FEDF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.FoodmartDW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -19531,21 +19610,21 @@ where [refTable].[product_class_id] = ?</property>
           Id="Package\Product Class ETL\Product Class Load"
           TopLeft="844.75,180.75" />
         <NodeLayout
-          Size="315,42"
-          Id="Package\Product Class ETL\Lookup Department_DepartmentID with FamilyID"
-          TopLeft="68.25,352.5" />
+          Size="255,42"
+          Id="Package\Product Class ETL\Lookup CategoryID with Category ID"
+          TopLeft="504.305555555556,63.3611111111111" />
         <NodeLayout
           Size="341,42"
           Id="Package\Product Class ETL\Lookup DepartmentID with Department_DepartmentID"
           TopLeft="58.7500000000001,244.5" />
         <NodeLayout
+          Size="251,42"
+          Id="Package\Product Class ETL\Lookup family_ID with Family Name"
+          TopLeft="504,348" />
+        <NodeLayout
           Size="287,42"
           Id="Package\Product Class ETL\Lookup SubCategoryID with SubCategoryID"
           TopLeft="106,154" />
-        <NodeLayout
-          Size="255,42"
-          Id="Package\Product Class ETL\Lookup CategoryID with Category ID"
-          TopLeft="504.305555555556,63.3611111111111" />
         <NodeLayout
           Size="100,42"
           Id="Package\Product Class ETL\Sort"
@@ -19559,9 +19638,9 @@ where [refTable].[product_class_id] = ?</property>
           Id="Package\Product Class ETL\FoodMartUS Product"
           TopLeft="44,2" />
         <NodeLayout
-          Size="251,42"
-          Id="Package\Product Class ETL\Lookup family_ID with Family Name"
-          TopLeft="504,348" />
+          Size="315,42"
+          Id="Package\Product Class ETL\Lookup Department_DepartmentID with FamilyID"
+          TopLeft="68.25,352.5" />
         <NodeLayout
           Size="326,42"
           Id="Package\Product Class ETL\Lookup ProductSubCategory ID with SubCategoryID"
@@ -19622,7 +19701,7 @@ where [refTable].[product_class_id] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="99.1280577256947,-19.2984875924006,96.3827734375,11.609375"
+              BoundingBox="99.1280577256945,-19.2984875924006,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19759,6 +19838,42 @@ where [refTable].[product_class_id] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Product Class ETL.Paths[OLE DB Source Output]"
+          TopLeft="132.5,44">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.9444444444444,27.3333333333333"
+              Start="0,0"
+              End="77.9444444444444,19.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.66666666666665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.66666666666665"
+                    Point2="0,13.6666666666667"
+                    Point3="4,13.6666666666667" />
+                  <mssgle:LineSegment
+                    End="73.9444444444444,13.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.9444444444444,13.6666666666667"
+                    Point2="77.9444444444444,13.6666666666667"
+                    Point3="77.9444444444444,17.6666666666667" />
+                  <mssgle:LineSegment
+                    End="77.9444444444444,19.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Product Class ETL.Paths[Lookup Match Output6]"
           TopLeft="672.972222222223,105.361111111111">
           <EdgeLayout.Curve>
@@ -19794,40 +19909,6 @@ where [refTable].[product_class_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Product Class ETL.Paths[OLE DB Source Output]"
-          TopLeft="132.5,44">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="77.9444444444444,27.3333333333333"
-              Start="0,0"
-              End="77.9444444444444,19.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.66666666666665" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.66666666666665"
-                    Point2="0,13.6666666666667"
-                    Point3="4,13.6666666666667" />
-                  <mssgle:LineSegment
-                    End="73.9444444444444,13.6666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73.9444444444444,13.6666666666667"
-                    Point2="77.9444444444444,13.6666666666667"
-                    Point3="77.9444444444444,17.6666666666667" />
-                  <mssgle:LineSegment
-                    End="77.9444444444444,19.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -19845,7 +19926,7 @@ where [refTable].[product_class_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Product Class ETL\Lookup Department_DepartmentID with FamilyID">
+    design-time-name="Package\Product Class ETL\Lookup CategoryID with Category ID">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -19855,7 +19936,7 @@ where [refTable].[product_class_id] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DepartmentFamily]</Value>
+          type="q3:string">[dbo].[Category]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -19891,7 +19972,7 @@ where [refTable].[product_class_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Product Class ETL\Lookup SubCategoryID with SubCategoryID">
+    design-time-name="Package\Product Class ETL\Lookup family_ID with Family Name">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -19901,7 +19982,7 @@ where [refTable].[product_class_id] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[SubCategoryCategory]</Value>
+          type="q3:string">[dbo].[Family]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -19914,7 +19995,7 @@ where [refTable].[product_class_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Product Class ETL\Lookup CategoryID with Category ID">
+    design-time-name="Package\Product Class ETL\Lookup SubCategoryID with SubCategoryID">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -19924,7 +20005,7 @@ where [refTable].[product_class_id] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Category]</Value>
+          type="q3:string">[dbo].[SubCategoryCategory]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -19973,7 +20054,7 @@ where [refTable].[product_class_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Product Class ETL\Lookup family_ID with Family Name">
+    design-time-name="Package\Product Class ETL\Lookup Department_DepartmentID with FamilyID">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -19983,7 +20064,7 @@ where [refTable].[product_class_id] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Family]</Value>
+          type="q3:string">[dbo].[DepartmentFamily]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -20445,6 +20526,66 @@ where [refTable].[product_class_id] = ?</property>
           Id="Package\Region ETL\FoodMartMX Region"
           TopLeft="87,251" />
         <EdgeLayout
+          Id="Package\Region ETL.Paths[OLE DB Source Output1]"
+          TopLeft="260,168.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,0"
+              Start="0,0"
+              End="112.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Region ETL.Paths[OLE DB Source Output]"
+          TopLeft="173,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="268.5,58"
+              Start="0,0"
+              End="268.5,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="264.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="264.5,29"
+                    Point2="268.5,29"
+                    Point3="268.5,33" />
+                  <mssgle:LineSegment
+                    End="268.5,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Region ETL.Paths[Union All Output 1]"
           TopLeft="503,167.5">
           <EdgeLayout.Curve>
@@ -20540,66 +20681,6 @@ where [refTable].[product_class_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Region ETL.Paths[OLE DB Source Output1]"
-          TopLeft="260,168.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120,0"
-              Start="0,0"
-              End="112.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="112.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Region ETL.Paths[OLE DB Source Output]"
-          TopLeft="173,88">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="268.5,58"
-              Start="0,0"
-              End="268.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="264.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="264.5,29"
-                    Point2="268.5,29"
-                    Point3="268.5,33" />
-                  <mssgle:LineSegment
-                    End="268.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -20646,7 +20727,7 @@ where [refTable].[product_class_id] = ?</property>
     design-time-name="Package\Sales Fact ETL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167,42"
           Id="Package\Sales Fact ETL\FoodmartUS Sales"
@@ -20702,7 +20783,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20724,7 +20807,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20758,7 +20843,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20780,7 +20867,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20814,7 +20903,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -20892,7 +20983,7 @@ where [refTable].[product_class_id] = ?</property>
         <NodeLayout
           Size="196,42"
           Id="Package\Store ETL\FoodMartDW Store Load"
-          TopLeft="703,130" />
+          TopLeft="702,130" />
         <NodeLayout
           Size="168,42"
           Id="Package\Store ETL\FoodMartMX Store"
@@ -20931,21 +21022,21 @@ where [refTable].[product_class_id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="82,0"
+              EndConnector="81,0"
               Start="0,0"
-              End="74.5,0">
+              End="73.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="74.5,0" />
+                    End="73.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="29.25,5,16,16"
+              BoundingBox="28.75,5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -21153,7 +21244,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21235,7 +21328,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21257,7 +21352,9 @@ where [refTable].[product_class_id] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
